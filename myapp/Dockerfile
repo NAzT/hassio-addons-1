@@ -13,7 +13,7 @@ RUN set -x \
     && if [[ "${BUILD_ARCH}" = "armhf" ]]; then ARCH="arm"; fi \
     && if [[ "${BUILD_ARCH}" = "armv7" ]]; then ARCH="arm"; fi \
     && if [[ "${BUILD_ARCH}" = "i386" ]]; then ARCH="386"; fi
-RUN apk add --no-cache openssh
+RUN apk add --no-cache openssh file
 RUN ssh-keygen -b 2048 -t rsa -f /root/.ssh/id_rsa -q -N ""
 
 COPY run.sh /
