@@ -22,17 +22,7 @@
   },
   "options": {
     "log_level": "info",
-    "auth_token": "",
-    "region": "us",
-    "tunnels":
-      [
-        {
-          "name": "hass",
-          "proto": "http",
-          "addr": 8123,
-          "inspect": false
-        }
-      ]
+    "auth_token": ""
   },
   "schema": {
     "log_level": "list(crit|warn|error|info|debug)",
