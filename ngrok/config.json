@@ -1,60 +1,29 @@
 {
-  "name": "ngrok Client",
-  "version": "2.1.6",
-  "slug": "ngrok",
-  "description": "A ngrok client for Hass.io",
-  "webui": "http://[HOST]:[PORT:4040]",
-  "url": "https://github.com/ThePicklenat0r/hassio-ngrok",
-  "arch": [
-    "aarch64",
-    "amd64",
-    "armhf",
-    "armv7",
-    "i386"
-  ],
+  "name": "CF Tunnel",
+  "version": "1.0.0",
+  "slug": "cf_tunnel",
+  "description": "Create SSH tunnel to public server",
+  "url": "https://github.com/nazt/hassio-addons/tree/master/cf_tunnel",
+  "arch": ["armhf", "armv7", "aarch64", "amd64", "i386"],
   "startup": "system",
   "boot": "auto",
-  "ports": {
-    "4040/tcp": "4040"
-  },
-  "ports_description": {
-    "4040/tcp": "Web interface"
-  },
+  "host_network": true,
   "options": {
-    "log_level": "info",
-    "auth_token": "",
-    "region": "us",
-    "tunnels": [
-      {
-        "name": "hass",
-        "proto": "http",
-        "addr": 8123,
-        "inspect": false
-      }
-    ]
+    "ssh_host": "123.123.123.123",
+    "ssh_user": "root",
+    "ssh_port": 22,
+    "tunnel_http": true,
+    "tunnel_https": true,
+    "socks_port": 1080
   },
   "schema": {
-    "log_level": "list(crit|warn|error|info|debug)",
-    "auth_token": "str?",
-    "region": "list(us|eu|ap|au|sa|jp|in)?",
-    "tunnels": [
-      {
-        "name": "str",
-        "proto": "list(http|tls|tcp)",
-        "addr": "match(^((([0-9]|[1-9][0-9]|1[0-9]{2}|2[0-4][0-9]|25[0-5])\\.){3}([0-9]|[1-9][0-9]|1[0-9]{2}|2[0-4][0-9]|25[0-5]):([1-9]|[1-5]?[0-9]{2,4}|6[1-4][0-9]{3}|65[1-4][0-9]{2}|655[1-2][0-9]|6553[1-5]))|([1-9]|[1-5]?[0-9]{2,4}|6[1-4][0-9]{3}|65[1-4][0-9]{2}|655[1-2][0-9]|6553[1-5])$)",
-        "inspect": "bool?",
-        "auth": "str?",
-        "host_header": "str?",
-        "bind_tls": "bool?",
-        "subdomain": "str?",
-        "hostname": "str?",
-        "crt": "str?",
-        "key": "str?",
-        "client_cas": "str?",
-        "remote_addr": "match(^(([0-9]|[1-9][0-9]|1[0-9]{2}|2[0-4][0-9]|25[0-5])\\.){3}([0-9]|[1-9][0-9]|1[0-9]{2}|2[0-4][0-9]|25[0-5]):([1-9]|[1-5]?[0-9]{2,4}|6[1-4][0-9]{3}|65[1-4][0-9]{2}|655[1-2][0-9]|6553[1-5])$)?",
-        "metadata": "str?"
-      }
-    ]
-  },
-  "image": "thepicklenat0r/{arch}-hassio-ngrok"
+    "ssh_host": "str",
+    "ssh_user": "str",
+    "ssh_port": "int",
+    "tunnel_http": "bool",
+    "tunnel_https": "bool",
+    "socks_port": "int",
+    "advanced": "str?",
+    "before": "str?"
+  }
 }
