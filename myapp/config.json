@@ -1,6 +1,6 @@
 {
   "name": "my app",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "slug": "ngrok",
   "description": "An example app",
   "webui": "http://[HOST]:[PORT:4040]",
