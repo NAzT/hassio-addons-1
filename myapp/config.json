@@ -11,11 +11,9 @@
     "armv7",
     "i386"
   ],
+  "host_network": true,
   "startup": "system",
   "boot": "auto",
-  "ports": {
-    "4040/tcp": "4040"
-  },
   "ports_description": {
     "4040/tcp": "Web interface"
   },
