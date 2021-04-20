@@ -1,5 +1,5 @@
 {
-  "name": "ngrok Client",
+  "name": "my app",
   "version": "dev",
   "slug": "ngrok",
   "description": "A ngrok client for Hass.io",
