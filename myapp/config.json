@@ -1,6 +1,6 @@
 {
   "name": "my app",
-  "version": "1.0.8",
+  "version": "1.0.9",
   "slug": "my-app",
   "description": "An example app",
   "webui": "http://[HOST]:[PORT:4040]",
