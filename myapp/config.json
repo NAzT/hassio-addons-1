@@ -1,6 +1,6 @@
 {
   "name": "my app",
-  "version": "1.1.10",
+  "version": "1.2.0",
   "slug": "my-app",
   "description": "An example app",
   "arch": [
@@ -14,29 +14,13 @@
   "startup": "system",
   "boot": "auto",
   "options": {
+    "pem": "",
     "host": "",
-    "host1": "str",
-    "host2": "str",
-    "host3": "str",
-    "host4": "str",
-    "host5": "str",
-    "customize": {
-      "active": false,
-      "folder": "mosquitto"
-    },
     "url": "localhost:8123"
   },
   "schema": {
+    "pem": "str",
     "host": "str",
-    "host1": "str",
-    "host2": "str",
-    "host3": "str",
-    "host4": "str",
-    "host5": "str",
-    "customize": {
-      "active": "bool",
-      "folder": "str"
-    },
     "url": "str"
   }
 }

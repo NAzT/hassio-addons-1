@@ -10,8 +10,8 @@ cat /root/.ssh/id_rsa.pub
 # BASE="ssh -o StrictHostKeyChecking=no"
 # TUN="-o ExitOnForwardFailure=yes -o ServerAliveInterval=30 -N"
 
-configPath="/etc/cloudflared/config.yml"
-mkdir -p /etc/cloudflared
+configPath="/root/.cloudflared/config.yml"
+mkdir -p /root/.cloudflared
 
 # echo "log: stdout" > $configPath
 bashio::log.info "Hello this is inf o log from bashio!"
@@ -26,6 +26,10 @@ if bashio::var.has_value "$(bashio::config 'url')"; then
   echo "url: $(bashio::config 'url')" >> $configPath
 fi
 
+if bashio::var.has_value "$(bashio::config 'pem')"; then
+  echo "$(bashio::config 'pem')" >> /root/.cloudflared/cert.pem
+fi
+
 # if bashio::var.has_value "$(bashio::config 'auth_token')"; then
 #   echo "authtoken: $(bashio::config 'auth_token')" >> $configPath
 # fi
@@ -37,4 +41,5 @@ fi
 # cat $configPath
 configfile=$(cat $configPath)
 bashio::log.info "Config file: \n${configfile}"
+bashio::log.info "Config :file \n${cat /root/.cloudflared/cert.pem}"
 cloudflared --url localhost:8123
