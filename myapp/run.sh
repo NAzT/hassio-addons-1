@@ -26,7 +26,7 @@ mkdir -p /root/.cloudflared
 
 PEM=$(jq --raw-output ".pem" $CONFIG_PATH)
 
-cp /ssl/$PEM /root/.cloudflared/cert.pem
+cp -Rv /ssl/$PEM /root/.cloudflared/cert.pem
 
 # echo $PEM >> /root/.cloudflared/cert.pem
 # echo "log: stdout" > $configPath
