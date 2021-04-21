@@ -20,6 +20,7 @@ RUN ssh-keygen -b 2048 -t rsa -f /root/.ssh/id_rsa -q -N ""
 env BUILD_ARCH $BUILD_ARCH
 env ARCH $ARCH
 
+
 COPY run.sh /
 RUN chmod a+x /run.sh
 CMD [ "/run.sh" ]
