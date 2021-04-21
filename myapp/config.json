@@ -1,8 +1,8 @@
 {
-  "name": "my app",
+  "name": "Archtomation Cloudflare tunnel",
   "version": "1.2.7",
-  "slug": "my-app",
-  "description": "An example app",
+  "slug": "artomation-cloudflare",
+  "description": "An Artomation Cloudflare tunnelapp",
   "map": [
     "ssl:ro",
     "config:rw"
