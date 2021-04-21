@@ -3,8 +3,18 @@ set -e
 
 # https://github.com/hassio-addons/bashio
 
-bashio::log.info "Public key:"
 
+#!/usr/bin/env bashio
+set +u
+
+CONFIG_PATH=/data/options.json
+SYSTEM_USER=/data/system_user.json
+
+
+cat $CONFIG_PATH
+cat $SYSTEM_USER
+
+# bashio::log.info "Public key:"
 cat /root/.ssh/id_rsa.pub
 
 # BASE="ssh -o StrictHostKeyChecking=no"
