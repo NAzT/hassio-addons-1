@@ -19,7 +19,7 @@
     "url": ""
   },
   "schema": {
-    "host": "str!",
-    "url": "str!"
+    "host": "str",
+    "url": "str"
   }
 }
