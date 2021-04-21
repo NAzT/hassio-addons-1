@@ -14,7 +14,7 @@ configPath="/etc/cloudflared/config.yml"
 mkdir -p /etc/cloudflared
 
 echo "log: stdout" > $configPath
-bashio::log.debug "Hello this is debug log from bashio!"
+bashio::log.info "Hello this is inf o log from bashio!"
 # if bashio::var.has_value "$(bashio::addon.port 4040)"; then
 #   echo "web_addr: 0.0.0.0:$(bashio::addon.port 4040)" >> $configPath
 # fi
@@ -36,5 +36,5 @@ fi
 # fi
 # cat $configPath
 configfile=$(cat $configPath)
-bashio::log.debug "Config file: \n${configfile}"
+bashio::log.info "Config file: \n${configfile}"
 # cloudflared --url localhost:8123
