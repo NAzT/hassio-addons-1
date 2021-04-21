@@ -16,7 +16,7 @@
   "boot": "auto",
   "options": {
     "host": "",
-    "url": ""
+    "url": "localhost:8123"
   },
   "schema": {
     "host": "str",
