@@ -1,6 +1,6 @@
 {
   "name": "Archtomation Cloudflare tunnel",
-  "version": "1.2.7",
+  "version": "1.2.8",
   "slug": "artomation-cloudflare",
   "description": "An Artomation Cloudflare tunnelapp",
   "url": "https://github.com/NAzT/hassio-addons-1",
