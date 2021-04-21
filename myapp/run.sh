@@ -26,7 +26,9 @@ mkdir -p /root/.cloudflared
 
 PEM=$(jq --raw-output ".pem" $CONFIG_PATH)
 
-echo $PEM >> /root/.cloudflared/cert.pem
+cp /ssl/$PEM /root/.cloudflared/cert.pem
+
+# echo $PEM >> /root/.cloudflared/cert.pem
 # echo "log: stdout" > $configPath
 bashio::log.info "Hello this is inf o log from bashio!"
 # if bashio::var.has_value "$(bashio::addon.port 4040)"; then
