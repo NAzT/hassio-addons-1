@@ -37,4 +37,4 @@ fi
 # cat $configPath
 configfile=$(cat $configPath)
 bashio::log.debug "Config file: \n${configfile}"
-cloudflared --url localhost:8123
+# cloudflared --url localhost:8123
