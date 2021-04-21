@@ -23,6 +23,10 @@ cat /root/.ssh/id_rsa.pub
 configPath="/root/.cloudflared/config.yml"
 mkdir -p /root/.cloudflared
 
+
+PEM=$(jq --raw-output ".pem" $CONFIG_PATH)
+
+echo $PEM >> /root/.cloudflared/cert.pem
 # echo "log: stdout" > $configPath
 bashio::log.info "Hello this is inf o log from bashio!"
 # if bashio::var.has_value "$(bashio::addon.port 4040)"; then
