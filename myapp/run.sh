@@ -24,6 +24,7 @@ fi
 
 if bashio::var.has_value "$(bashio::config 'url')"; then
   echo "url: $(bashio::config 'url')" >> $configPath
+fi
 
 # if bashio::var.has_value "$(bashio::config 'auth_token')"; then
 #   echo "authtoken: $(bashio::config 'auth_token')" >> $configPath
@@ -33,5 +34,7 @@ if bashio::var.has_value "$(bashio::config 'url')"; then
 # else
 #   echo "No region defined, default region is US."
 # fi
-cat $configPath
+# cat $configPath
+configfile=$(cat $configPath)
+bashio::log.debug "Config file: \n${configfile}"
 cloudflared --url localhost:8123
