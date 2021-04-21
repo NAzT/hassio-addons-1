@@ -10,6 +10,8 @@ set +u
 CONFIG_PATH=/data/options.json
 # SYSTEM_USER=/data/system_user.json
 
+HOST=$(jq --raw-output ".host" $CONFIG_PATH)
+URL=$(jq --raw-output ".url" $CONFIG_PATH)
 
 cat $CONFIG_PATH
 # cat $SYSTEM_USER
@@ -22,7 +24,6 @@ cat /root/.ssh/id_rsa.pub
 
 configPath="/root/.cloudflared/config.yml"
 mkdir -p /root/.cloudflared
-
 
 PEM=$(jq --raw-output ".pem" $CONFIG_PATH)
 
@@ -58,4 +59,5 @@ fi
 configfile=$(cat $configPath)
 bashio::log.info "Config file: \n${configfile}"
 # bashio::log.info "Config :file \n${cat /root/.cloudflared/cert.pem}"
-cloudflared --url localhost:8123
+# cloudflared --url localhost:8123
+cloudflared --hostname "$HOST" --url "$URL"
