@@ -1,6 +1,6 @@
 {
   "name": "my app",
-  "version": "1.0.9",
+  "version": "1.1.0",
   "slug": "my-app",
   "description": "An example app",
   "webui": "http://[HOST]:[PORT:4040]",
@@ -14,15 +14,12 @@
   "host_network": true,
   "startup": "system",
   "boot": "auto",
-  "ports_description": {
-    "4040/tcp": "Web interface"
-  },
   "options": {
-    "log_level": "info",
-    "auth_token": ""
+    "host": "",
+    "url": ""
   },
   "schema": {
-    "log_level": "list(crit|warn|error|info|debug)",
-    "auth_token": "str?"
+    "host": "str!",
+    "url": "str!"
   }
 }
