@@ -60,4 +60,9 @@ configfile=$(cat $configPath)
 bashio::log.info "Config file: \n${configfile}"
 # bashio::log.info "Config :file \n${cat /root/.cloudflared/cert.pem}"
 # cloudflared --url localhost:8123
-exec "cloudflared-$BUILD_ARCH" --hostname "$HOST" --url "$URL"
+
+echo "#!/usr/bin/env bashio" > go.sh
+echo "cloudflared-$BUILD_ARCH" --hostname "$HOST" --url "$URL" >> go.sh
+chmod +x ./go.sh
+
+./go.sh
