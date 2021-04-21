@@ -1,6 +1,6 @@
 {
   "name": "my app",
-  "version": "1.1.8",
+  "version": "1.1.9",
   "slug": "my-app",
   "description": "An example app",
   "arch": [
@@ -15,10 +15,20 @@
   "boot": "auto",
   "options": {
     "host": "",
+    "host1": "str",
+    "host2": "str",
+    "host3": "str",
+    "host4": "str",
+    "host5": "str",
     "url": "localhost:8123"
   },
   "schema": {
     "host": "str",
+    "host1": "str",
+    "host2": "str",
+    "host3": "str",
+    "host4": "str",
+    "host5": "str",
     "url": "str"
   }
 }
