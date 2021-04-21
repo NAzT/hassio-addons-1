@@ -1,11 +1,13 @@
 ARG BUILD_FROM
 FROM $BUILD_FROM
 
+
 # Copy root filesystem
 COPY rootfs /
 
 # Setup requirements
 ARG BUILD_ARCH
+env BUILD_ARCH $BUILD_ARCH
 RUN set -x \
     && apk add --no-cache curl \
     && if [[ "${BUILD_ARCH}" = "aarch64" ]]; then ARCH="arm64"; fi \
