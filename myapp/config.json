@@ -1,6 +1,6 @@
 {
   "name": "my app",
-  "version": "1.1.9",
+  "version": "1.1.10",
   "slug": "my-app",
   "description": "An example app",
   "arch": [
@@ -20,6 +20,10 @@
     "host3": "str",
     "host4": "str",
     "host5": "str",
+    "customize": {
+      "active": false,
+      "folder": "mosquitto"
+    },
     "url": "localhost:8123"
   },
   "schema": {
@@ -29,6 +33,10 @@
     "host3": "str",
     "host4": "str",
     "host5": "str",
+    "customize": {
+      "active": "bool",
+      "folder": "str"
+    },
     "url": "str"
   }
 }
