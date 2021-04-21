@@ -41,5 +41,5 @@ fi
 # cat $configPath
 configfile=$(cat $configPath)
 bashio::log.info "Config file: \n${configfile}"
-bashio::log.info "Config :file \n${cat /root/.cloudflared/cert.pem}"
+# bashio::log.info "Config :file \n${cat /root/.cloudflared/cert.pem}"
 cloudflared --url localhost:8123
