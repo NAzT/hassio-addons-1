@@ -3,6 +3,7 @@
   "version": "1.2.7",
   "slug": "artomation-cloudflare",
   "description": "An Artomation Cloudflare tunnelapp",
+  "url": "https://github.com/NAzT/hassio-addons-1",
   "map": [
     "ssl:ro",
     "config:rw"
